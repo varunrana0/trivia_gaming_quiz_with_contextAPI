@@ -10,7 +10,7 @@ function Answers(props) {
 					answers.map((item) => (
 						<span
 							key={item}
-							className="flex flex-wrap bg-indigo-100 py-2 px-4 rounded-md font-medium w-fit text-gray-600">
+							className="flex flex-wrap bg-indigo-100 py-2 px-4 rounded-md font-medium w-fit text-gray-600 ">
 							{item}
 						</span>
 					))}
