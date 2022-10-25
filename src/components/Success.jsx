@@ -1,6 +1,11 @@
-import React from "react";
+import { useContext } from "react";
 
-function Success({ success, values }) {
+import { QuizGameStore } from "../context/Store";
+
+function Success() {
+	const state = useContext(QuizGameStore);
+	const { success, values } = state;
+
 	return (
 		<>
 			{success && (

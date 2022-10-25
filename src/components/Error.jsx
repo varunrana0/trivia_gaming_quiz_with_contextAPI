@@ -1,6 +1,9 @@
-import React from "react";
+import { useContext } from "react";
+import { QuizGameStore } from "../context/Store";
 
-function Error({ error, values }) {
+function Error() {
+	const state = useContext(QuizGameStore);
+	const { error, values } = state;
 	return (
 		<div>
 			{" "}

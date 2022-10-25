@@ -1,6 +1,10 @@
-import React from "react";
+import { useContext } from "react";
+import { QuizGameStore } from "../context/Store";
 
-function Question({ values }) {
+function Question() {
+	const state = useContext(QuizGameStore);
+	const values = state.values;
+
 	return (
 		<div className="mb-10">
 			<small className="text-gray-500 inline-block border-b w-full mb-2">

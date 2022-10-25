@@ -3,7 +3,12 @@ import Error from "./Error";
 import InputForm from "./InputForm";
 import Success from "./Success";
 
-function Form({ values, error, setError, callQuizAgain, success, setSuccess }) {
+import { useContext } from "react";
+import { QuizGameStore } from "../context/Store";
+
+function Form() {
+	const state = useContext(QuizGameStore);
+	const { setError, setSuccess, fetchTriviaQues, values } = state;
 	const guessAnswer = useRef(true);
 
 	const handleCheckAnswer = (e) => {
@@ -23,7 +28,7 @@ function Form({ values, error, setError, callQuizAgain, success, setSuccess }) {
 			setTimeout(() => {
 				setError(false);
 				setSuccess(false);
-				callQuizAgain();
+				fetchTriviaQues();
 			}, 2000);
 		}
 
@@ -37,7 +42,7 @@ function Form({ values, error, setError, callQuizAgain, success, setSuccess }) {
 			setTimeout(() => {
 				setError(false);
 				setSuccess(false);
-				callQuizAgain();
+				fetchTriviaQues();
 			}, 2000);
 		}
 
@@ -47,10 +52,10 @@ function Form({ values, error, setError, callQuizAgain, success, setSuccess }) {
 	return (
 		<form onSubmit={handleCheckAnswer}>
 			{/* error handler */}
-			<Error error={error} values={values} />
+			<Error />
 
 			{/* succes handler */}
-			<Success success={success} values={values} />
+			<Success />
 
 			{/* main form */}
 			<InputForm guessAnswer={guessAnswer} />

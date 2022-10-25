@@ -1,5 +1,11 @@
-function Answers(props) {
-	const { incorrectAnswer, correctAnswer } = props;
+import { useContext } from "react";
+import { QuizGameStore } from "../context/Store";
+
+function Answers() {
+	const state = useContext(QuizGameStore);
+	const values = state.values;
+
+	const { incorrectAnswer, correctAnswer } = values;
 	const answers = [...incorrectAnswer, correctAnswer];
 
 	return (
