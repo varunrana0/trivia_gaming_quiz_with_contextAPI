@@ -5,7 +5,7 @@ import Answers from "./Answers";
 
 function Home() {
 	return (
-		<div className="px-5 py-10 md:px-10 border border-gray-200 rounded-md bg-white drop-shadow-lg">
+		<div className="px-5 py-10 w-3/6 mx-auto md:px-5 border border-gray-200 rounded-md bg-white drop-shadow-lg">
 			<Title />
 			<Question />
 			<Answers />

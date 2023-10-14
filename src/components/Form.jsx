@@ -50,16 +50,18 @@ function Form() {
 	};
 
 	return (
-		<form onSubmit={handleCheckAnswer}>
-			{/* error handler */}
-			<Error />
+		<div className="w-full">
+			<form onSubmit={handleCheckAnswer} className="w-full">
+				{/* error handler */}
+				<Error />
 
-			{/* succes handler */}
-			<Success />
+				{/* succes handler */}
+				<Success />
 
-			{/* main form */}
-			<InputForm guessAnswer={guessAnswer} />
-		</form>
+				{/* main form */}
+				<InputForm guessAnswer={guessAnswer} />
+			</form>
+		</div>
 	);
 }
 
